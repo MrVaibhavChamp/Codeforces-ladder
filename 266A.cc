@@ -10,7 +10,7 @@ int main()
     cin >> n >> s;
     for (int i = 0; s[i]!='\0'; i++)
     {
-        if (s[i]==s[i+1])   // Bloody simple as hell but wasted a lotta time man!
+        if (s[i]==s[i+1])   // Simple!
         {
             count++;
         }
