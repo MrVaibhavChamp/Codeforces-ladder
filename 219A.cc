@@ -7,39 +7,73 @@ int INF = 1e9;
 
 void solve()
 {
-    int k, count = 0;
-    cin >> k;
+    // This one's copied!
+    // int k, count = 0;
+    // cin >> k;
+    // string s;
+    // cin >> s;
+    // char ch;
+    // int l = s.size();
+    // sort(s.begin(), s.begin() + l);
+    // for (int i = 0; i < l; i++)
+    // {
+    //     if (i % k == 0)
+    //     {
+    //         ch = s[i];
+    //     }
+    //     if (s[i] == ch)
+    //     {
+    //         count++;
+    //     }
+    // }
+    // if (l==count && count%k==0)
+    // {
+    //     for (int i = 0; i < k; i++)
+    //     {
+    //         for (int j = 0; j < l; j+=k)
+    //         {
+    //             cout<<s[j];
+    //         }
+    //     }
+    // }
+    // else
+    // {
+    //     cout<<"-1";
+    // }
+
+    // This one's mine!
+    int k;
     string s;
-    cin >> s;
+    cin >> k >> s;
+    int len = s.size();
+    sort(s.begin(), s.begin() + len);
     char ch;
-    int l = s.size();
-    sort(s.begin(), s.begin() + l);
-    for (int i = 0; i < l; i++)
+    if (len % k != 0)
+    {
+        cout << "-1";
+        return;
+    }
+    for (int i = 0; i < len; i++)
     {
         if (i % k == 0)
         {
             ch = s[i];
         }
-        if (s[i] == ch)
+        if (ch != s[i])
         {
-            count++;
+            cout << "-1";
+            return;
         }
     }
-    if (l==count && count%k==0)
+    for (int i = 0; i < k; i++)
     {
-        for (int i = 0; i < k; i++)
+        for (int j = 0; j < len; j+=k)
         {
-            for (int j = 0; j < l; j+=k)
-            {
-                cout<<s[j];
-            }
-        }
-    }
-    else
-    {
-        cout<<"-1";
+            cout<<s[j];
+        }   
     }
 }
+
 
 signed main()
 {
